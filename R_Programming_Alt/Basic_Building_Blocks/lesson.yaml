@@ -97,45 +97,45 @@
   Output: Outros operadores aritméticos comuns são `+`, `-`, `/`, e `^` (onde x^2 significa 'x ao quadrado'). Para obter a raíz quadrada, use a função sqrt() e para obter o valor absoluto, utilize a função abs().
 
 - Class: cmd_question
-  Output: Obtenha a raíz quadrada de z - 1 e atribua isto a uma nova variável chamada my_sqrt.
-  CorrectAnswer: my_sqrt <- sqrt(z - 1)
-  AnswerTests: omnitest(correctExpr='my_sqrt <- sqrt(z - 1)')
-  Hint: Atribua o resultado de sqrt(z - 1) a variável chamada my_sqrt.
+  Output: Obtenha a raíz quadrada de z - 1 e atribua isto a uma nova variável chamada minha_sqrt.
+  CorrectAnswer: minha_sqrt <- sqrt(z - 1)
+  AnswerTests: omnitest(correctExpr='minha_sqrt <- sqrt(z - 1)')
+  Hint: Atribua o resultado de sqrt(z - 1) a variável chamada minha_sqrt.
 
 - Class: mult_question
-  Output: Antes de vermos o conteúdo da variável my_sqrt, quantos elementos você acha que ela contém?
+  Output: Antes de vermos o conteúdo da variável minha_sqrt, quantos elementos você acha que ela contém?
   CorrectAnswer: Um vetor de 3 elementos
   AnswerChoices: Um vetor de 3 elementos; Um número único (um vetor de tamanho igual a 1); Um vetor de tamanho 0 (Um vetor vazio)
   AnswerTests: omnitest(correctVal='Um vetor de 3 elementos')
   Hint: 'Pense sobre como que o R trabalhou com as outras operações com vetores: elemento por elemento.'
 
 - Class: cmd_question
-  Output: Mostre o conteúdo de my_sqrt.
-  CorrectAnswer: my_sqrt
-  AnswerTests: omnitest(correctExpr='my_sqrt')
-  Hint: Apenas digite my_sqrt e pressione Enter para visualizar o conteúdo desta variável.
+  Output: Mostre o conteúdo de minha_sqrt.
+  CorrectAnswer: minha_sqrt
+  AnswerTests: omnitest(correctExpr='minha_sqrt')
+  Hint: Apenas digite minha_sqrt e pressione Enter para visualizar o conteúdo desta variável.
 
 - Class: text
   Output: Como você deve ter previsto, R primeiro subtraiu 1 de cada elemento de z e então fez a raíz quadrada de cada um. Isso te deixou com um vetor do mesmo tamanho que o vetor original z.
 
 - Class: cmd_question
-  Output: Agora, crie uma nova variável chamada my_div que recebe o valor de z dividido por my_sqrt.
-  CorrectAnswer: my_div <- z / my_sqrt
-  AnswerTests: omnitest(correctExpr='my_div <- z / my_sqrt')
-  Hint: Coloque my_div <- z / my_sqrt. Os espaços em ambos os lados do símbolo `/` não são necessários, mas geralmente melhoram a leitura, por fazerem o código parecer menos aglomerado. Mas isso vai da preferência de cada um.
+  Output: Agora, crie uma nova variável chamada minha_div que recebe o valor de z dividido por minha_sqrt.
+  CorrectAnswer: minha_div <- z / minha_sqrt
+  AnswerTests: omnitest(correctExpr='minha_div <- z / minha_sqrt')
+  Hint: Coloque minha_div <- z / minha_sqrt. Os espaços em ambos os lados do símbolo `/` não são necessários, mas geralmente melhoram a leitura, por fazerem o código parecer menos aglomerado. Mas isso vai da preferência de cada um.
 
 - Class: mult_question
   Output: Quais destas afirmativas você acha que é verdadeiro?
-  CorrectAnswer: O primeiro elemento de my_div é igual ao primeiro elemento de z dividido pelo primeiro elemento de my_sqrt, e assim por diante...
-  AnswerChoices: O primeiro elemento de my_div é igual ao primeiro elemento de z dividido pelo primeiro elemento de my_sqrt, e assim por diante...; my_div é um número único (um vetor de tamanho 1); my_div é indefinido
-  AnswerTests: omnitest(correctVal='O primeiro elemento de my_div é igual ao primeiro elemento de z dividido pelo primeiro elemento de my_sqrt, e assim por diante...')
+  CorrectAnswer: O primeiro elemento de minha_div é igual ao primeiro elemento de z dividido pelo primeiro elemento de minha_sqrt, e assim por diante...
+  AnswerChoices: O primeiro elemento de minha_div é igual ao primeiro elemento de z dividido pelo primeiro elemento de minha_sqrt, e assim por diante...; minha_div é um número único (um vetor de tamanho 1); minha_div é indefinido
+  AnswerTests: omnitest(correctVal='O primeiro elemento de minha_div é igual ao primeiro elemento de z dividido pelo primeiro elemento de minha_sqrt, e assim por diante...')
   Hint: Pense sobre como o R cuida de outras operações vetorizadas como `+` e `*`.
 
 - Class: cmd_question
-  Output: Vá em frente e veja o conteúdo de my_div.
-  CorrectAnswer: my_div
-  AnswerTests: omnitest(correctExpr='my_div')
-  Hint: Digite my_div e pressione Enter para ver o conteúdo.
+  Output: Vá em frente e veja o conteúdo de minha_div.
+  CorrectAnswer: minha_div
+  AnswerTests: omnitest(correctExpr='minha_div')
+  Hint: Digite minha_div e pressione Enter para ver o conteúdo.
 
 - Class: text
   Output: Quando há dois vetores do mesmo tamanho, o R faz as operações aritméticas especificadas (`+`, `-`, `*`, etc.) elemento-por-elemento. Se os vetores são de tamanhos diferentes, o R "recicla" o vetor menor até que que este tenha o mesmo tamanho que o vetor maior.
@@ -174,13 +174,13 @@
   Hint: Se o teu ambiente não te permite navegar com a seta, digite o comando correto para prosseguir.
 
 - Class: text
-  Output: Finalmente, vamos imaginar que você quer ver o conteúdo de uma variável que você criou anteriormente, mas você não lembra se a nomeou my_div ou myDiv. Você poderia tentar ambos os nomes e ver qual funciona, ou...
+  Output: Finalmente, vamos imaginar que você quer ver o conteúdo de uma variável que você criou anteriormente, mas você não lembra se a nomeou minha_div ou minhaDiv. Você poderia tentar ambos os nomes e ver qual funciona, ou...
 
 - Class: cmd_question
-  Output: Você pode digitar as primeiras duas letras do nome da variável e pressionar a tecla Tab. A maioria dos ambientes de programação fornecerão uma lista de variáveis que você criou que começam com my. Chamamos isso de 'auto-completar' e pode ser bastante útil quando você tem diversas variáveis no seu ambiente. Tente utilizar o Tab para auto-completar. (Se não funcionar para você, digite my_div e pressione Enter.)
-  CorrectAnswer: my_div
-  AnswerTests: omnitest(correctExpr='my_div')
-  Hint: Se o teu ambiente não te permite auto-completar, digite my_div e aperte Enter para prosseguir.
+  Output: Você pode digitar as primeiras duas letras do nome da variável e pressionar a tecla Tab. A maioria dos ambientes de programação fornecerão uma lista de variáveis que você criou que começam com minha. Chamamos isso de 'auto-completar' e pode ser bastante útil quando você tem diversas variáveis no seu ambiente. Tente utilizar o Tab para auto-completar. (Se não funcionar para você, digite minha_div e pressione Enter.)
+  CorrectAnswer: minha_div
+  AnswerTests: omnitest(correctExpr='minha_div')
+  Hint: Se o teu ambiente não te permite auto-completar, digite minha_div e aperte Enter para prosseguir.
 
 - Class: mult_question
   Output: Você gostaria de informar alguém sobre o teu sucesso em completar esta lição?
