@@ -7,19 +7,16 @@
   Version: 2.2.0
 
 - Class: text
-  Output: Uma das vantagens do R em relação às outras linguagens de programação, é a facilidade de criar gráficos com qualidade para serem publicadas. Nesta lição, você aprenderá sobre os gráficos básico em R. 
+  Output: Uma das vantagens do R em relação às outras linguagens de programação, é a facilidade de criar gráficos com qualidade para serem publicadas. Nesta lição, você aprenderá sobre os gráficos básicos em R. 
 
 - Class: text
-  Output: We do not cover the more advanced portions of graphics in R in this lesson. These include lattice, ggplot2 and ggvis.
-
-- Class: text
-  Output: There is a school of thought that this approach is backwards, that we should teach ggplot2 first. See http://varianceexplained.org/r/teach_ggplot2_to_beginners/ for an outline of this view.
+  Output: Nós não iremos cobrir os tópicos avançados de gráficos em R nesta lição.
 
 - Class: cmd_question
-  Output: Load the included data frame cars with data(cars).
+  Output: Para iniciar, carregue o dataframe de nome cars com data(cars).
   CorrectAnswer: data(cars)
   AnswerTests: omnitest(correctExpr='data(cars)')
-  Hint: Type data(cars) to load the data.
+  Hint: Digite data(cars) para carregar os dados.
 
 - Class: text
   Output: To fix ideas, we will work with simple data frames. Our main goal is to introduce various plotting functions and their arguments. All the output would look more interesting with larger, more complex data sets.
