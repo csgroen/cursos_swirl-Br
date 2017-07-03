@@ -19,20 +19,20 @@
   Hint: Digite x para ver seu conteúdo.
 
 - Class: text
-  Output: The way you tell R that you want to select some particular elements (i.e. a 'subset') from a vector is by placing an 'index vector' in square brackets immediately following the name of the vector.
+  Output: A maneira como você informa ao R que você quer selecionar algum elemento em particular (ou seja, um 'subconjunto') a partir de um vetor é colocando um 'índice de vetor' entre colchetes logo após o nome do vetor.
 
 - Class: cmd_question
-  Output: For a simple example, try x[1:10] to view the first ten elements of x.
+  Output: 'Como exemplo, digite x[1:10] para ver os primeiros 10 elementos de x.'
   CorrectAnswer: x[1:10]
   AnswerTests: omnitest(correctExpr='x[1:10]')
-  Hint: View the first ten elements of x with x[1:10].
+  Hint: 'Veja os primeiros 10 elementos de x com x[1:10]'
 
 - Class: text
-  Output: Index vectors come in four different flavors -- logical vectors, vectors of positive integers, vectors of negative integers, and vectors of character strings -- each of which we'll cover in this lesson.
+  Output: Vetor de índice são retornados de quatro maneiras diferentes -- vetores lógicos, vetores de valores inteiros positivos, vetores de valores inteiros negativos e vetores de palavras -- todos esses abordados nesta lição.
 
 - Class: text
-  Output: Let's start by indexing with logical vectors. One common scenario when working with real-world data is that we want to extract all elements of a vector that are not NA (i.e. missing data). Recall that is.na(x) yields a vector of logical values the same length as x, with TRUEs corresponding to NA values in x and FALSEs corresponding to non-NA values in x.
-
+  Output: Vamos começar com o vetores lógicos. um cenário comum quando trabalhamos com dados do mundo real é que nós queremos extrair todos os elementos do vetor que não sejam N.A. (ex: dados perdidos). Lembre-se de que is.na(x) produz um vetor de valores lógicos com o mesmo tamanho de x, com TRUEs correspondendo a valores NA em x e FALSEs correspondendo a valores não NA em x.
+ 
 - Class: mult_question
   Output: What do you think x[is.na(x)] will give you?
   AnswerChoices: A vector of all NAs; A vector with no NAs; A vector of TRUEs and FALSEs; A vector of length 0
