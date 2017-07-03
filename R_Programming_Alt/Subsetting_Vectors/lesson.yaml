@@ -7,16 +7,16 @@
   Version: 2.2.0
 
 - Class: text
-  Output: In this lesson, we'll see how to extract elements from a vector based on some conditions that we specify.
+  Output: Nesta lição, vamos ver como se extrai elementos de um vetor baseado em condições que iremos especificar.
 
 - Class: text
-  Output: For example, we may only be interested in the first 20 elements of a vector, or only the elements that are not NA, or only those that are positive or correspond to a specific variable of interest. By the end of this lesson, you'll know how to handle each of these scenarios.
+  Output: Por exemplo, podemos estar somente interessados nos 20 primeiros elementos de um vetor, ou só nos elementos que não são NA, ou só naqueles que são positivos, ou correspondem a uma variável específica de interesse. No final dessa lição, você saberá lidar com todos esses cenários.
 
 - Class: cmd_question
-  Output: I've created for you a vector called x that contains a random ordering of 20 numbers (from a standard normal distribution) and 20 NAs. Type x now to see what it looks like.
+  Output: Criamos para você um vetor chamado x que contém 20 números em ordem aleatória (a partir de uma distribuição normal) e 20 NAs. Digite x agora para ver a aparência do vetor.
   CorrectAnswer: x
   AnswerTests: omnitest(correctExpr='x')
-  Hint: Type x to view its contents.
+  Hint: Digite x para ver seu conteúdo.
 
 - Class: text
   Output: The way you tell R that you want to select some particular elements (i.e. a 'subset') from a vector is by placing an 'index vector' in square brackets immediately following the name of the vector.
