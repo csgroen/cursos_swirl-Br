@@ -33,33 +33,35 @@
 - Class: text
   Output: Vamos começar com o vetores lógicos. Um cenário comum quando trabalhamos com dados do mundo real é que nós queremos extrair todos os elementos do vetor que não sejam N.A. (ex: dados perdidos). Lembre-se de que is.na(x) produz um vetor de valores lógicos com o mesmo tamanho de x, com TRUEs correspondendo a valores NA em x e FALSEs correspondendo a valores não NA em x.
  
+ 
+ 
 - Class: mult_question
-  Output: What do you think x[is.na(x)] will give you?
-  AnswerChoices: A vector of all NAs; A vector with no NAs; A vector of TRUEs and FALSEs; A vector of length 0
-  CorrectAnswer: A vector of all NAs
+  Output: O que você imagina que x[is.na(x)] retorne?
+  AnswerChoices: Um vetor com todos os NAs; Um vetor sem NAs, Um vetor de TRUEs e FALSEs; Um vetor de tamanho 0
+  CorrectAnswer: Um vetor com todos os NAs
   AnswerTests: omnitest(correctVal="A vector of all NAs")
-  Hint: Remember that is.na(x) tells us where the NAs are in a vector. So if we subset x based on that, what do you expect to happen?
+  Hint: Lembre-se que is.na(x) retorna em qual posição NA se encontra dentro do vetor. Então se estabelecermos um subconjunto de x, o que você espera que aconteça?
 
 - Class: cmd_question
-  Output: Prove it to yourself by typing x[is.na(x)].
+  Output: Constate isso você mesmo, digitando x[is.na(x)]. 
   CorrectAnswer: x[is.na(x)]
   AnswerTests: omnitest(correctExpr='x[is.na(x)]')
-  Hint: Type x[is.na(x)] to see that you get all NAs, which is clearly not what we want!
-
+  Hint: Digite x[is.na(x)] para ver que retornam todos os NAs, e isso claramente não é o que queremos!
+  
 - Class: cmd_question
-  Output: Recall that `!` gives us the negation of a logical expression, so !is.na(x) can be read as 'is not NA'. Therefore, if we want to create a vector called y that contains all of the non-NA values from x, we can use y <- x[!is.na(x)]. Give it a try.
+  Output: Lembre-se de que `!` retorna a negação da expressão lógica, então !is.na(x) pode ser lido como 'não é NA'. Sendo assim, se nós queremos criar um vetor chamado y que contém todos os valores não NA de x, nós podemos usar y <- x[!is.na(x)]. Digite para ver.
   CorrectAnswer: y <- x[!is.na(x)]
   AnswerTests: omnitest(correctExpr='y <- x[!is.na(x)]')
-  Hint: Type y <- x[!is.na(x)] to capture all non-missing values from x.
-
+  Hint: Digite y <- x[!is.na(x)] para capturar todos os valores não perdidos de x.
+ 
 - Class: cmd_question
-  Output: Print y to the console.
+  Output: Mostre y no console.
   CorrectAnswer: 'y'
   AnswerTests: omnitest(correctExpr='y')
-  Hint: Type y to view its contents.
-
+  Hint: Digite y para ver o seu conteúdo
+  
 - Class: text
-  Output: Now that we've isolated the non-missing values of x and put them in y, we can subset y as we please.
+  Output: Agora que nós isolamos os valores não perdidos de x e colocamos dentro da variável y, nós podemos criar os subconjuntos que quisermos.
 
 - Class: mult_question
   Output: Recall that the expression y > 0 will give us a vector of logical values the same length as y, with TRUEs corresponding to values of y that are greater than zero and FALSEs corresponding to values of y that are less than or equal to zero. What do you think y[y > 0] will give you?
