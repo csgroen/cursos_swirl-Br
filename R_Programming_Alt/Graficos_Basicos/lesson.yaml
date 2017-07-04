@@ -104,94 +104,98 @@
   Hint: Digite plot(x = cars$speed, y = cars$dist, xlab = "Velocidade (mph)", ylab = "Distância (ft)", main = "Velocidade do Carro vs Distância de Freagem") para criar o plot.
 
 - Class: text
-  Output: Como você deve ter visto, o ?plot ou help(plot) retorna a sintaxe de alguns argumentos apenas. Para podermos explorar outras funções gráficas, vamor olhar para a função par() que, quando combinada com plot fornece várias outras formas de melhorar o gráfico. and to other graphical functions.
+  Output: Como você deve ter visto, o ?plot ou help(plot) retorna a sintaxe de alguns argumentos apenas. Para podermos explorar outras funções gráficas, vamor olhar para a função par() que, quando combinada com plot fornece várias outras formas de melhorar o gráfico.
+  
+- Class: text
+  Output: 'Par pode ser um tanto quanto confusa, uma vez que seus argumentos podem ser utilizados dentro da função plot (ex: plot(cars, col=3), sendo que col especifica a cor dos pontos) ou fora, por exemplo: par(col=3) seguido de plot(cars). Para facilitar o entendimento, iremos utilizar os parâmetros sempre dentro da função plot.'
 
 - Class: cmd_question
-  Output: Olhe a página de ajuda para a função par.
+  Output: Olhe a página de ajuda para a função par. Veja a lista de parâmetros adicionais que podem ser inseridos em plot na seção "Graphical Parameters".
   CorrectAnswer: ?par
   AnswerTests: any_of_exprs('?par', 'help(par)')
   Hint: Digite ?par ou help(par) para visualizar a página de ajuda desta função.
   
 - Class: cmd_question
-  Output: Plot cars so that the plotted points are colored red. (Use col = 2 to achieve this effect.)
+  Output: Plote cars da maneira mais simples (usando apenas plot(cars) SEM os parâmetros de nome de eixo ou título) ,mude as cores dos pontos de cars para vermelho. (Use col = 2 dentro da função plot())
   CorrectAnswer: plot(cars, col = 2)
   AnswerTests: omnitest(correctExpr='plot(cars, col = 2)')
-  Hint: Type plot(cars, col = 2) to create the plot.
+  Hint: Digite plot(cars, col = 2).
 
 - Class: cmd_question
-  Output: Plot cars while limiting the x-axis to 10 through 15.  (Use xlim = c(10, 15) to achieve this effect.) 
+  Output: Limite o eixo x para as velocidades 10 até 15, usando xlim = c(10, 15). 
   CorrectAnswer: plot(cars, xlim = c(10, 15))
   AnswerTests: omnitest(correctExpr='plot(cars, xlim = c(10, 15))')
-  Hint: Type plot(cars, xlim = c(10, 15)) to create the plot.
-
-- Class: text
-  Output: You can also change the shape of the symbols in the plot. The help page for points (?points) provides the details.
+  Hint: Digite plot(cars, xlim = c(10, 15)).
 
 - Class: cmd_question
-  Output: Plot cars using triangles.  (Use pch = 2 to achieve this effect.) 
+  Output: Você também pode alterar o formato dos pontos do plot, veja ?points para mais detalhes.
+  CorrectAnswer: ?points
+  AnswerTests: any_of_exprs('?points', 'help(points)')
+  Hint: Digite ?points ou help(points) para acessar os parâmetros que possibilitam trocar a forma dos pontos do gráfico.
+
+- Class: cmd_question
+  Output: Faça o plot(cars), mas troque as bolinhas por triângulos. (Use pch = 2.) 
   CorrectAnswer: plot(cars, pch = 2)
   AnswerTests: omnitest(correctExpr='plot(cars, pch = 2)')
-  Hint: Type plot(cars, pch = 2) to create the plot.
+  Hint: Coloque plot(cars, pch = 2) para obter o resultado desejado.
 
 - Class: text
-  Output: Arguments like "col" and "pch" may not seem very intuitive. And that is because they aren't! So, many/most people use more modern packages, like ggplot2, for creating their graphics in R.
+  Output: Argumentos como "col" e "pch" não são muito intuitivos, por esse motivo, outros pacotes mais modernos (como ggplot2 e lattice) foram criados para facilitar estas modificações de detalhes.
 
 - Class: text
-  Output: It is, however, useful to have an introduction to base graphics because many of the idioms in lattice and ggplot2 are modeled on them.
+  Output: Mas é muito importante saber como estes parâmetros funcionam, uma vez que estes novos pacotes foram modelados com base no funcionamento dos gráficos básicos.
 
 - Class: text
-  Output: Let's now look at some other functions in base graphics that may be useful, starting with boxplots.
+  Output: Vamos ver novas funções de gráficos, os boxplots. Para isso, precisamos carregar um novo conjunto de dados um pouco maior que o anrterior: o mtcars, que contém 11 medições para 32 carros.
 
 - Class: cmd_question
-  Output: Load the mtcars data frame. 
+  Output: Carregue o dataset com a função data() 
   CorrectAnswer: data(mtcars)
   AnswerTests: omnitest(correctExpr='data(mtcars)')
-  Hint: Type data(mtcars) to load the data.
-
-- Class: text
-  Output: Anytime that you load up a new data frame, you should explore it before using it. In the middle of a swirl lesson, just type play(). This temporarily suspends the lesson (without losing the work you have already done) and allows you to issue commands like dim(mtcars) and head(mtcars). Once you are done examining the data, just type nxt() and the lesson will pick up where it left off.
+  Hint: Digite data(mtcars) para carregar o conjunto de dados no teu ambiente de trabalho.
 
 - Class: cmd_question
-  Output: Look up the help page for boxplot(). 
+  Output: Utilize a função View() para visualizar como são os teus dados.
+  CorrectAnswer: View(mtcars)
+  AnswerTests: omnitest(correctExpr='View(mtcars)')
+  Hint: Digite View(mtcars) para olhar como os dados estão dispostos no dataframe.
+
+- Class: text
+  Output: Para explorar outros aspectos dos dados (o significado das siglas das colunas, por exemplo), digite play() para pausar um pouco o curso e testar outros comandos que não estejam no curso (você pode ver a página de ajuda para mtcars a fim de descobrir o nome das colunas) e, quando tiver terminado, digite nxt() para voltar ao curso de onde você parou.
+
+- Class: cmd_question
+  Output: Veja o help para boxplot(). 
   CorrectAnswer: ?boxplot
   AnswerTests: any_of_exprs('?boxplot', 'help(boxplot)')
-  Hint: Type ?boxplot or help(boxplot) to view a help page with details about boxplot.
+  Hint: Digite ?boxplot or help(boxplot) para visualizar os parâmetros que boxplot recebe.
 
 - Class: text
-  Output: Instead of adding data columns directly as input arguments, as we did with plot(), it is often handy to pass in the entire data frame. This is what the "data" argument in boxplot() allows.
-
-- Class: text
-  Output: boxplot(), like many R functions, also takes a "formula" argument, generally an expression with a tilde ("~") which indicates the relationship between the input variables. This allows you to enter something like mpg ~ cyl to plot the relationship between cyl (number of cylinders) on the x-axis and mpg (miles per gallon) on the y-axis.
+  Output: Comece a utilizar a fórmula da qual vimos acima para plotar a relação entre duas variáveis do dataframe. A disposição dos argumentos na forma de "fórmula" é representada por um til ("~"), que indica a relação entre as variáveis de entrada. Colocar algo do tipo mpg ~ cyl irá plotar a relação entre o consumo de combustível medido em milhas por galão (mpg) no eixo Y e o número de cilindros dos carros (cyl) no eixo X.
 
 - Class: cmd_question
-  Output: Use boxplot() with formula = mpg ~ cyl and data = mtcars to create a box plot.
+  Output: Teste a função boxplot() com os argumentos formula = mpg ~ cyl e o argumento data = mtcars para criar o gráfico.
   CorrectAnswer: boxplot(formula = mpg ~ cyl, data = mtcars)
   AnswerTests: omnitest(correctExpr='boxplot(formula = mpg ~ cyl, data = mtcars)')
-  Hint: Type boxplot(formula = mpg ~ cyl, data = mtcars) to create the plot.
+  Hint: Coloque boxplot(formula = mpg ~ cyl, data = mtcars) para criar o boxplot.
 
 - Class: text
-  Output: The plot shows that mpg is much lower for cars with more cylinders. Note that we can use the same set of arguments that we explored with plot() above to add axis labels, titles and so on.
+  Output: Pelo boxplot você pode agora ver de maneira mais fácil que  o consumo de combustível é muito menor para carros com mais cilindros. Caso deseje, você pode utilizar o play() para brincar com os argumentos de título, nome de axis, cores e formas que vimos para a função plot(). Para voltar ao curso, é só digitar nxt().
 
 - Class: text
-  Output: When looking at a single variable, histograms are a useful tool. hist() is the associated R function. Like plot(), hist() is best used by just passing in a single vector. 
+  Output: Em alguns momentos, é interessante saber se os teus dados seguem uma distribuição normal, a fim de saber qual estatística é melhor aplicada em passos posteriores. Para isso, a função hist() será bem útil por criar histogramas que recebem um vetor único como argumento obrigatório. 
 
 - Class: cmd_question
-  Output: Use hist() with the vector mtcars$mpg to create a histogram.
-  CorrectAnswer: hist(mtcars$mpg)
-  AnswerTests: any_of_exprs('hist(mtcars$mpg)', 'hist(x = mtcars$mpg)')
-  Hint: Type hist(mtcars$mpg) to create the plot.
-
-# Not sure what a good lesson length is for this. 
-# Might add some information on saving plots.
-# Other functions that I use include identify().
+  Output: Use hist() com o vetor hist(mtcars$drat) para criar um histograma das medidas de proporção do eixo traseiro. Observe se a distribuição dos dados segue uma gaussiana.
+  CorrectAnswer: hist(mtcars$drat)
+  AnswerTests: any_of_exprs('hist(mtcars$drat)', 'hist(x = mtcars$drat)')
+  Hint: Coloque o comando hist(mtcars$drat) para criar o histograma.
 
 - Class: text
-  Output: In this lesson, you learned how to work with base graphics in R. The best place to go from here is to study the ggplot2 package. If you want to explore other elements of base graphics, then this web page (http://www.ling.upenn.edu/~joseff/rstudy/week4.html) provides a useful overview.
+  Output: Nessa lição, você aprendeu a como utilizar funções básicas para criação de gráficos em R, mas ainda há muito mais a ser explorado. O melhor jeito de continuar aprendendo é utilizando novos pacotes.
 
 - Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
+  Output: Você gostaria de informar alguém sobre o teu sucesso em completar esta lição?
   CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""
+  AnswerChoices: Sim; Não
+  AnswerTests: notify()
+  Hint: NULL
