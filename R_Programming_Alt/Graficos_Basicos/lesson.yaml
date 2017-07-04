@@ -28,7 +28,7 @@
   Hint: Digite ?cars ou help(cars) para visualizar a página de ajuda que contém os detalhes do dataframe cars.
 
 - Class: text
-  Output: "Como você pode observar na página de ajuda, cars contém apenas duas variáveis coletadas: velocidade (mph) e distância de parada (ft). Observe que o dado é de 1920."
+  Output: 'Como você pode observar na página de ajuda, cars contém apenas duas variáveis coletadas: velocidade (mph) e distância de parada (ft). Observe que o dado é de 1920.'
 
 - Class: cmd_question
   Output: Aplique a função head() no dataset cars.
