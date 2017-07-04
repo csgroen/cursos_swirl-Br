@@ -1,101 +1,84 @@
 - Class: meta
-  Course: R Programming
-  Lesson: Logic
-  Author: Sean Kross
+  Course: Programação em R
+  Lesson: Expressões e operações lógicas
+  Author: Sean Kross, Kelin Gonçalves de Oliveira (Tradução)
   Type: Standard
   Organization: swirlstats
   Version: 2.2.15
 
 - Class: text
-  Output: This lesson is meant to be a short introduction to logical operations in R.
+  Output: Essa lição apresenta uma breve introdução às operações lógicas em R.
 
 - Class: text
-  Output: There are two logical values in R, also called boolean values. They are TRUE and FALSE. 
-    In R you can construct logical expressions which will evaluate to either TRUE or FALSE.
+  Output: Há dois valores lógicos em R, também chamados de valores booleanos. Eles são TRUE e FALSE (inglês para Verdadeiro e Falso, respectivamente). Em R você pode construir expressões lógicas que retornarão TRUE ou FALSE.
 
 - Class: text
-  Output: "Many of the questions in this lesson will involve evaluating logical 
-  expressions. It may be useful to open up a second R terminal where you can 
-  experiment with some of these expressions."
+  Output: Muitas das questões nesta lição implicará na avaliação de expressões lógicas. Pode ser útil abrir uma segunda sessão R para experimentar algumas destas expressões.
 
 - Class: cmd_question
-  Output: Creating logical expressions requires logical operators. You're probably familiar with 
-    arithmetic operators like `+`, `-`, `*`, and `/`. The first logical operator we are going to 
-    discuss is the equality operator, represented by two equals signs `==`. Use the equality operator
-    below to find out if TRUE is equal to TRUE.
+  Output: A criação de expressões lógicas requer operadores lógicos. Provavelmente, você está acostumado(a) com operadores aritméticos, como `+`, `-`, `*` e `/`.  O primeiro operador lógico que vamos discutir é o operador de igualdade representado por dois sinais 'igual' seguidos ('=='). Utilize o operador de igualdade abaixo para descobrir se TRUE é igual a TRUE.
   CorrectAnswer: TRUE == TRUE
   AnswerTests: omnitest(correctExpr='TRUE == TRUE')
-  Hint: Use the equality operator and type TRUE == TRUE
+  Hint: Utilize o operador de igualdade e digite TRUE == TRUE
 
 - Class: text
-  Output: Just like arithmetic, logical expressions can be grouped by parenthesis so that the entire expression
-   (TRUE == TRUE) == TRUE evaluates to TRUE. 
+  Output: Assim como aritmética, as expressões lógicas podem ser agrupadas por parênteses, assim, a expressão (TRUE == TRUE) == TRUE retornará o resultado TRUE. R avaliará primeiro o que está dentro do parênteses e utilizará a resposta desta avaliação para comparar com o termo que está fora do parênteses.
 
 - Class: cmd_question
-  Output: To test out this property, try evaluating (FALSE == TRUE) == FALSE .
+  Output: Para testar esta propriedade, tente avaliar (FALSE == TRUE) == FALSE.
   CorrectAnswer: (FALSE == TRUE) == FALSE
   AnswerTests: omnitest(correctExpr='(FALSE == TRUE) == FALSE')
-  Hint: "Try typing: (FALSE == TRUE) == FALSE"
+  Hint: Digite (FALSE == TRUE) == FALSE
 
 - Class: cmd_question
-  Output: The equality operator can also be used to compare numbers. Use `==` to see if 6 is equal to 7.
+  Output: O operador de igualdade também pode ser utilizado para comparar números. Utilize `==` para ver se 6 é igual a 7.
   CorrectAnswer: 6 == 7
   AnswerTests: omnitest(correctExpr='6 == 7')
-  Hint: Use the equality operator and type 6 == 7
+  Hint: Utilize o operador de igualdade e digite 6 == 7
 
 - Class: text
-  Output: The previous expression evaluates to FALSE because 6 is less than 7. Thankfully, there
-    are inequality operators that allow us to test if a value is less than or greater than another value.
+  Output: A questão anterior retornou FALSE porque 6 é diferente de 7. Há operadores de igualdade que podem avaliar se um valor é menor ou maior que outro valor.
 
 - Class: cmd_question
-  Output: The less than operator `<` tests whether the number on the left side of the operator 
-    (called the left operand) is less than the number on the right side of the operator (called the
-    right operand). Write an expression to test whether 6 is less than 7.
+  Output: O operador "menor que" (`<`) testa se o número à esquerda do operador é menor que o número que se encontra ao lado direito do operador. Escreva uma expressão que avalie se 6 é menor que 7.
   CorrectAnswer: 6 < 7
   AnswerTests: omnitest(correctExpr='6 < 7')
-  Hint: Use the less than operator and type 6 < 7
+  Hint: Utilize o operador menor que e digite 6 < 7
 
 - Class: cmd_question
-  Output: There is also a less-than-or-equal-to operator `<=` which tests whether the left operand 
-    is less than or equal to the right operand. Write an expression to test whether 10 is less than or equal to 10.
+  Output: Há também um operador chamado "menor ou igual a" ('<=') que testará se o número esquerdo é menor ou igual ao número à direita do operador. Escreva uma expressão que avalie se 10 é menor ou igual a 10.
   CorrectAnswer: 10 <= 10
   AnswerTests: omnitest(correctExpr='10 <= 10')
-  Hint: Use the `<=` operator and type 10 <= 10
+  Hint: Use `<=` para avaliar se 10 <= 10
 
 - Class: text
-  Output: Keep in mind that there are the corresponding greater than `>` and greater-than-or-equal-to
-    `>=` operators.
+  Output: Tenha em mente que os operadores correspondentes existem e são: "maior que" (`>`) e "maior ou igual a" (`>=`).
 
 - Class: mult_question
-  Output: 'Which of the following evaluates to FALSE?'
+  Output: 'Quais das operações abaixo retornará FALSE?'
   CorrectAnswer: 9 >= 10
   AnswerChoices: 9 >= 10; 7 == 7; 6 < 8; 0 > -36 
   AnswerTests: omnitest(correctVal='9 >= 10')
-  Hint: 'If you need to, you can evaluate each expression in a separate R session to find the correct answer.'
+  Hint: 'Se precisar, avalie a expressão em uma sessão R separada para encontrar a resposta correta.'
 
 - Class: mult_question
-  Output: 'Which of the following evaluates to TRUE?'
+  Output: 'Quais das opções abaixo retornará TRUE?'
   CorrectAnswer: 9 >= 10
   AnswerChoices: 9 >= 10; 7 == 9; 57 < 8; -6 > -7 
   AnswerTests: omnitest(correctVal='-6 > -7')
-  Hint: 'If you need to, you can evaluate each expression in a separate R session to find the correct answer.'
+  Hint: 'Se você precisar, você pode avaliar a expressão em uma sessão R separada para encontrar a resposta correta.'
 
 - Class: cmd_question
-  Output: The next operator we will discuss is the 'not equals' operator represented by `!=`. Not equals tests whether two
-    values are unequal, so TRUE != FALSE evaluates to TRUE. Like the equality operator, `!=` can also
-    be used with numbers. Try writing an expression to see if 5 is not equal to 7.
+  Output: O próximo operador a ser discutido será o "não igual a", representado por `!=`. O operador de não igualdade testará se dois valores são diferentes, então se eu pedir pra avaliar se TRUE != FALSE, o R retornará TRUE, já que sim, as palavras TRUE e FALSE são diferentes. Assim como os operadores de igualdade, o de não igualdade também pode ser utilizado com números. Tente escrever uma expressão para avaliar se 5 é diferente de 7.
   CorrectAnswer: 5 != 7
   AnswerTests: omnitest(correctExpr='5 != 7')
-  Hint: Use the not equals operator and type 5 != 7
+  Hint: Utilize o operador de não igualdade e digite 5 != 7
 
 - Class: cmd_question
-  Output: "In order to negate boolean expressions you can use the NOT operator. An exclamation point `!` will cause
-    !TRUE (say: not true) to evaluate to FALSE and !FALSE (say: not false) to evaluate to TRUE. Try using the NOT
-    operator and the equals operator to find the opposite of whether 5 is equal to 7."
-  CorrectAnswer: '!5 == 7'
+  Output: "A fim de negar expressões booleanas, você pode utilizar o operador NOT, representado por um ponto de exclamação (`!`). Este operador retornará o contrário de cada operação. ou seja, !TRUE (diz-se: not true, inglês para não verdadeiro) retornará FALSE e !FALSE (diz-se: not false, inglês para não falso) retornará TRUE. Primeiramente, construa uma operação de igualdade de 5 igual a 7 (mas ainda não dê Enter). Em seguida, coloque na frente do parênteses da operação, o operador NOT e veja qual será o resultado."
+  CorrectAnswer: '!(5 == 7)'
   AnswerTests: any_of_exprs('!5 == 7', '!(5 == 7)')
-  Hint: This expression may be a little tricky, so think about negating the expression 5 == 7 (all you need is an exclamation
-    point in front).
+  Hint: Essa expressão pode ser um pouco complicada, então pense na negação da expressão 5 == 7 (tudo o que você precisa é um ponto de exclamação na frente).
 
 - Class: text
   Output: Let's take a moment to review. The equals operator `==` tests whether two boolean values or numbers are equal,
